@@ -27,7 +27,7 @@ def verify_project_folders(template_path, projects):
                     'path': folder_path.split('\\')
                 }
             else:
-                errors.setdefault(f"{folder.lower()}foldermissing", []).append(project)
+                errors.setdefault(f"{folder.lower()}_foldermissing", []).append(project)
 
         project_folders[project] = {**details, **project_folder_info}
 
@@ -48,8 +48,6 @@ def main():
 
     save_to_json(project_folders, output_projects_file)
     save_to_json(errors, output_errors_file)
-
-    print("Verification and JSON generation complete.")
 
 if __name__ == "__main__":
     main()
