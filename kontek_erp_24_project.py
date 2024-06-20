@@ -1,6 +1,8 @@
 import os
 import json
 
+# Loading projects from the projects.json file in the ERP 1 folder
+
 def load_projects(file_path):
     try:
         with open(file_path, 'r') as file:
@@ -8,6 +10,8 @@ def load_projects(file_path):
     except FileNotFoundError:
         print(f"File not found: {file_path}")
         return {}
+
+# Verify the project folders exist based off of the template directory formatting
 
 def verify_project_folders(template_path, projects):
     template_folders = [f for f in os.listdir(template_path) if os.path.isdir(os.path.join(template_path, f))]
@@ -32,6 +36,8 @@ def verify_project_folders(template_path, projects):
         project_folders[project] = {**details, **project_folder_info}
 
     return project_folders, errors
+
+# Saving to a new json file
 
 def save_to_json(data, file_path):
     with open(file_path, 'w') as f:
