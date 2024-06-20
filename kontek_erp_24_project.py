@@ -43,6 +43,8 @@ def save_to_json(data, file_path):
     with open(file_path, 'w') as f:
         json.dump(data, f, indent=4)
 
+# Used ERP 1 projects.json file for testing, can be replaced by any other json projects file in the ERP folder
+
 def main():
     project_file_path = 'P:/KONTEK/ENGINEERING/ELECTRICAL/Application Development/ERP/1. Project Folder Search/V3_2024-06-04/projects.json'
     template_directory = 'P:/KONTEK/CUSTOMER/~PROJECT FOLDER TEMPLATE - DO NOT DELETE, DO NOT CUT/JOB NUMBER AND SYSTEM NAME'
